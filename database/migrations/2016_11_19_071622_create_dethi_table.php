@@ -15,6 +15,9 @@ class CreateDethiTable extends Migration
     {
         Schema::create('dethi', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('name_dethi')->unique();
+            $table->integer('monthi_id')->unsigned();
+            $table->foreign('monthi_id')->references('id')->on('monthi');
             $table->timestamps();
         });
     }

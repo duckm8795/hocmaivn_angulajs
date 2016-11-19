@@ -98,6 +98,13 @@
             </div>
         </div>
     </div>
+
+    <div class="container">
+        <div class="col s12">
+            <div class="card-panel indigo white-text center ">Toán</div>
+
+        </div>
+    </div>
     <div class="container ">
         <div class="row">
             <div class="col s12 card-panel">
@@ -185,7 +192,7 @@
     });
 
     app.controller('ThiTracNghiemController', function ($scope,$http){
-        $http.get('http://lar.dev/lar/list').success(function(response){
+        $http.get('http://localhost/hocmaivn/list').success(function(response){
             console.log(response);
             $scope.cauhois = response;
         });

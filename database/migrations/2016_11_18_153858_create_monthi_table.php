@@ -16,8 +16,6 @@ class CreateMonthiTable extends Migration
         Schema::create('monthi', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name_monthi')->unique();
-            $table->json('dethi');
-            $table->integer('correct');
             $table->timestamps();
         });
     }

@@ -17,6 +17,8 @@ class CreateCauhoiTable extends Migration
             $table->increments('id');
             $table->string('questions')->unique();         
             $table->json('choices');
+            $table->integer('dethi_id')->unsigned();
+            $table->foreign('dethi_id')->references('id')->on('dethi');
             $table->integer('correct');
             $table->timestamps();
         });
