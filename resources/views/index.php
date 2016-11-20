@@ -99,12 +99,16 @@
         </div>
     </div>
 
-    <div class="container">
-        <div class="col s12">
-            <div class="card-panel indigo white-text center ">Toán</div>
+    <ul class="collapsible" data-collapsible="accordion">
+        <li>
+            <div class="collapsible-header" ng-repeat="ch in cauhois"><i class="material-icons">filter_drama</i>{{ ch.name_monthi }}</div>
+            <div class="collapsible-body" ng-repeat="chn in ch.name_dethi">
+                <p>{{ chn.text}}</p>
+            </div>
+        </li>
 
-        </div>
-    </div>
+    </ul>
+
     <div class="container ">
         <div class="row">
             <div class="col s12 card-panel">
@@ -112,21 +116,44 @@
                     <div class="col s9">
                         <form action="#" class="indigo-text" ng-repeat="ch in cauhois">
                             <p >
-                                {{ ch.id }}. {{ ch.questions }}
+                                {{ ch.name_monthi }}
                             </p>
-                            <p ng-repeat =" chs in ch.choices">
+                            <p ng-repeat="chn in ch.name_dethi">
                                 <input name="group1" type="radio" id="test1" class="with-gap"/>
-                                <label for="test1"">{{ chs.text }}</label>
+                                <label for="test1"">{{ chn.id}}</label>
                             </p>
-                            
-                        </form>                    
-                    </div>                
+
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
-    
+
 
     </div>
+<!--    -->
+<!--        <div class="container ">-->
+<!--        <div class="row">-->
+<!--            <div class="col s12 card-panel">-->
+<!--                <div class="row">-->
+<!--                    <div class="col s9">-->
+<!--                        <form action="#" class="indigo-text" ng-repeat="ch in cauhois">-->
+<!--                            <p >-->
+<!--                                {{ ch.id }}. {{ ch.questions }}-->
+<!--                            </p>-->
+<!--                            <p ng-repeat =" chs in ch.choices">-->
+<!--                                <input name="group1" type="radio" id="test1" class="with-gap"/>-->
+<!--                                <label for="test1"">{{ chs.text }}</label>-->
+<!--                            </p>-->
+<!--                            -->
+<!--                        </form>                    -->
+<!--                    </div>                -->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    -->
+<!---->
+<!--    </div>-->
     <div class="ng-view" >
 
     </div>
@@ -192,7 +219,7 @@
     });
 
     app.controller('ThiTracNghiemController', function ($scope,$http){
-        $http.get('http://localhost/hocmaivn/list').success(function(response){
+        $http.get('http://localhost/hocmaivn/list11/1/1').success(function(response){
             console.log(response);
             $scope.cauhois = response;
         });

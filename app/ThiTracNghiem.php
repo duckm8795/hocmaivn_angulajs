@@ -9,6 +9,7 @@ class ThiTracNghiem extends Model
     protected $table = 'cauhoi';
     protected $guarded = [];
     protected $casts = [
-        'choices' => 'json'
+        'choices' => 'json',
+        'name_dethi' => 'json'
     ];
 }
