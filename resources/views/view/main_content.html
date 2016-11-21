@@ -1,179 +1,35 @@
 <!DOCTYPE html>
 <html>
 <body class="red lighten-5">
-<div class="row">
-    <div class="col s12">
-        <ul class="collapsible" data-collapsible="accordion">
-            <li>
-                <div class="collapsible-header  indigo white-text"><i class="material-icons">view_list</i>Toán</div>
-                <div class="collapsible-body">
-                    <ul class="collection">
-                        <li class="collection-item avatar">
-                            <i class="material-icons circle">assignment</i>
-                            <span class="title">Đề số 1</span>
-                            <br>
-                            Số câu hỏi : 45
+<div class="container " ng-controller="getListMonThiController" >
 
-                            <a href="#!" class="secondary-content"><i class="material-icons">trending_flat</i></a>
-                        </li>
-                        <li class="collection-item avatar">
-                            <i class="material-icons circle">assignment</i>
-                            <span class="title">Đề số 2</span>
-                            <br>
-                            Số câu hỏi : 34
 
-                            <a href="#!" class="secondary-content"><i class="material-icons">trending_flat</i></a>
-                        </li>
-                        <li class="collection-item avatar">
-                            <i class="material-icons circle">assignment</i>
-                            <span class="title">Đề số 3</span>
-                            <br>
-                            Số câu hỏi : 25
 
-                            <a href="#start2" class="secondary-content"><i class="material-icons">trending_flat</i></a>
-                        </li>
-                    </ul>
-                </div>
-            </li>
-            <li>
-                <div class="collapsible-header  indigo white-text"><i class="material-icons">view_list</i>Văn</div>
-                <div class="collapsible-body">
-                    <ul class="collection">
-                        <li class="collection-item avatar">
-                            <i class="material-icons circle">assignment</i>
-                            <span class="title">Đề số 1</span>
-                            <br>
-                            Số câu hỏi : 45
+    <div class="row">
+        <div class="col s12" ng-repeat="lmh in list_monhoc">
+            <div class="card-panel indigo white-text center ">{{ lmh.name_monthi }}</div>
+            <ul class="collection">
+                <li class="collection-item avatar" ng-repeat ="mh_child in lmh.name_dethi">
+                    <i class="material-icons circle">folder</i>
+                    <span class="title">{{ mh_child.text}}</span>
+                    <p ng-controller="GetNoCauHoiController ">First Line  : {{ no_cauhoi.length }}<br>
 
-                            <a href="#!" class="secondary-content"><i class="material-icons">trending_flat</i></a>
-                        </li>
-                        <li class="collection-item avatar">
-                            <i class="material-icons circle">assignment</i>
-                            <span class="title">Đề số 2</span>
-                            <br>
-                            Số câu hỏi : 34
+                    </p>
+                    <a href="start/{{mh_child.id}}" class="secondary-content"><i class="material-icons">trending_flat</i></a>
+                </li>
 
-                            <a href="#!" class="secondary-content"><i class="material-icons">trending_flat</i></a>
-                        </li>
-                        <li class="collection-item avatar">
-                            <i class="material-icons circle">assignment</i>
-                            <span class="title">Đề số 3</span>
-                            <br>
-                            Số câu hỏi : 25
+            </ul>
+        </div>
 
-                            <a href="#!" class="secondary-content"><i class="material-icons">trending_flat</i></a>
-                        </li>
 
-                    </ul>
-                </div>
-            </li>
-            <li>
-                <div class="collapsible-header  indigo white-text"><i class="material-icons">view_list</i>Anh</div>
-                <div class="collapsible-body">
-                    <ul class="collection">
-                        <li class="collection-item avatar">
-                            <i class="material-icons circle">assignment</i>
-                            <span class="title">Đề số 1</span>
-                            <br>
-                            Số câu hỏi : 45
-
-                            <a href="#!" class="secondary-content"><i class="material-icons">trending_flat</i></a>
-                        </li>
-                        <li class="collection-item avatar">
-                            <i class="material-icons circle">assignment</i>
-                            <span class="title">Đề số 2</span>
-                            <br>
-                            Số câu hỏi : 34
-
-                            <a href="#!" class="secondary-content"><i class="material-icons">trending_flat</i></a>
-                        </li>
-                        <li class="collection-item avatar">
-                            <i class="material-icons circle">assignment</i>
-                            <span class="title">Đề số 3</span>
-                            <br>
-                            Số câu hỏi : 25
-
-                            <a href="#!" class="secondary-content"><i class="material-icons">trending_flat</i></a>
-                        </li>
-
-                    </ul>
-                </div>
-            </li>
-            <li>
-                <div class="collapsible-header  indigo white-text"><i class="material-icons">view_list</i>Lý</div>
-                <div class="collapsible-body">
-                    <ul class="collection">
-                        <li class="collection-item avatar">
-                            <i class="material-icons circle">assignment</i>
-                            <span class="title">Đề số 1</span>
-                            <br>
-                            Số câu hỏi : 45
-
-                            <a href="#!" class="secondary-content"><i class="material-icons">trending_flat</i></a>
-                        </li>
-                        <li class="collection-item avatar">
-                            <i class="material-icons circle">assignment</i>
-                            <span class="title">Đề số 2</span>
-                            <br>
-                            Số câu hỏi : 34
-
-                            <a href="#!" class="secondary-content"><i class="material-icons">trending_flat</i></a>
-                        </li>
-                        <li class="collection-item avatar">
-                            <i class="material-icons circle">assignment</i>
-                            <span class="title">Đề số 3</span>
-                            <br>
-                            Số câu hỏi : 25
-
-                            <a href="#!" class="secondary-content"><i class="material-icons">trending_flat</i></a>
-                        </li>
-
-                    </ul>
-                </div>
-            </li>
-            <li>
-                <div class="collapsible-header  indigo white-text"><i class="material-icons">view_list</i>Hóa</div>
-                <div class="collapsible-body">
-                    <ul class="collection">
-                        <li class="collection-item avatar">
-                            <i class="material-icons circle">assignment</i>
-                            <span class="title">Đề số 1</span>
-                            <br>
-                            Số câu hỏi : 45
-
-                            <a href="#!" class="secondary-content"><i class="material-icons">trending_flat</i></a>
-                        </li>
-                        <li class="collection-item avatar">
-                            <i class="material-icons circle">assignment</i>
-                            <span class="title">Đề số 2</span>
-                            <br>
-                            Số câu hỏi : 34
-
-                            <a href="#!" class="secondary-content"><i class="material-icons">trending_flat</i></a>
-                        </li>
-                        <li class="collection-item avatar">
-                            <i class="material-icons circle">assignment</i>
-                            <span class="title">Đề số 3</span>
-                            <br>
-                            Số câu hỏi : 25
-
-                            <a href="#!" class="secondary-content"><i class="material-icons">trending_flat</i></a>
-                        </li>
-
-                    </ul>
-                </div>
-            </li>
-        </ul>
 
     </div>
-
 </div>
 
 
 <!--Import jQuery before materialize.js-->
-<script type="text/javascript" src="../js/jquery-2.1.1.min.js"></script>
-<script type="text/javascript" src="../js/materialize.js"></script>
-
+<script type="text/javascript" src="<?php echo asset('resources/views/js/jquery-2.1.1.min.js'); ?>  "></script>
+<script type="text/javascript" src="<?php echo asset('resources/views/js/materialize.js'); ?>"></script>
 
 </body>
 </html>

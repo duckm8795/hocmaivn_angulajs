@@ -32,3 +32,11 @@ Route::get('getlist/{monthi_id}',function($monthi_id){
     return App\MonThi::join('dethi','monthi.id', '=', 'dethi.monthi_id')->where('monthi.id','=',$monthi_id)->get();
 
 });
+Route::get('getlist',function(){
+    return App\MonThi::join('dethi','monthi.id', '=', 'dethi.monthi_id')->get();
+
+});
+Route::get('getnoquestion',function(){
+    return App\MonThi::join('cauhoi','monthi.id', '=', 'cauhoi.dethi_id')->get();
+
+});

@@ -1,15 +1,26 @@
 <!DOCTYPE html>
 <html>
-<body class="red lighten-5">
-<div class="container " ng-controller="getListMonThiController" >
+<head>
+    <!--Import Google Icon Font-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="../css/materialize.css" media="screen,projection"/>
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+
+<body class="red lighten-5" >
+<div class="container " ng-controller="getListEachMonThiController" >
 
 
 
     <div class="row">
-        <div class="col s12" ng-repeat="lmh in list_monhoc">
-            <div class="card-panel indigo white-text center ">{{ lmh.name_monthi }}</div>
+        <div class="col s12" ng-repeat="mh in _monhoc">
+            <div class="card-panel indigo white-text center ">{{ mh.name_monthi }}</div>
             <ul class="collection">
-                <li class="collection-item avatar" ng-repeat ="mh_child in lmh.name_dethi">
+                <li class="collection-item avatar" ng-repeat ="mh_child in mh.name_dethi">
                     <i class="material-icons circle">folder</i>
                     <span class="title">{{ mh_child.text}}</span>
                     <p ng-controller="GetNoCauHoiController ">First Line  : {{ no_cauhoi.length }}<br>
@@ -26,11 +37,8 @@
     </div>
 </div>
 
-
 <!--Import jQuery before materialize.js-->
 <script type="text/javascript" src="<?php echo asset('resources/views/js/jquery-2.1.1.min.js'); ?>  "></script>
 <script type="text/javascript" src="<?php echo asset('resources/views/js/materialize.js'); ?>"></script>
-
-
 </body>
 </html>

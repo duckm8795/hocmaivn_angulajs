@@ -22,7 +22,7 @@
         <div class="nav-wrapper indigo ">
             <a href="#" data-activates="slide-out" class="button-collapse-1 left"><i class="material-icons">view_day</i></a>
             <a href="#" class="brand-logo center"><img class="responsive-img" src="images/ic_launcher.png"></a>
-            <a href="#" data-activates="mobile-demo" class="right button-collapse"><i
+            <a href="#" data-activates="mobile-demo" class=" button-collapse right"><i
                     class="material-icons">clear_all</i></a>
             <ul class="right hide-on-med-and-down">
                 <li><a href="">Đăng ký</a></li>
@@ -37,7 +37,7 @@
             </ul>
         </div>
     </nav>
-    <ul id="slide-out" class="side-nav" ng-controller="MonThiController as monthiCtrl">
+    <ul id="slide-out" class="side-nav" ng-controller="MonThiController ">
         <li>
             <div class="userView">
                 <div class="background">
@@ -62,22 +62,15 @@
 
 <main>
     <!-- Search -->
-    <div class="container" ng-controller="myCtrl">
-        <div class="row">
-            <div class="input-field col s4 ">
-                <select id="SpaceAccommodation">
-                    <option value="" disabled selected>Tìm kiếm</option>
-                    <option value="1">Toán</option>
-                    <option value="2">Văn</option>
-                    <option value="3">Anh</option>
-                    <option value="4">Lý</option>
-                    <option value="5">Hóa</option>
+    <div class="container" ng-controller="MonThiController ">
+        <div class="row" >
+            <div class="input-field col s4" >
+                <select ng-repeat="mhs in monhocs" >
+                    <option value="1" > {{ mhs.name_monthi}}</option>
                 </select>
             </div>
             
-            <div class="test">
 
-            </div>
             <div class="input-field col s2">
                 <a href="#start1" class="waves-effect waves-light btn indigo">Tìm kiếm</a>
             </div>
@@ -89,7 +82,7 @@
 
 
 
-    </div>
+    
     <!--    -->
     <!--        <div class="container ">-->
     <!--        <div class="row">-->
@@ -159,62 +152,12 @@
     </div>
 </footer>
 
-<script>
-    $('#SpaceAccommodation').change(function () {
-        var selectedText = $(this).find("option:selected").text();
 
-        $(".test").text(selectedText);
-    });
-
-    var app = angular.module("myApp", ["ngRoute"]);
-
-    app.config(function ($routeProvider) {
-        $routeProvider
-            .when("/", {
-                templateUrl: "resources/views/view/main_content.html"
-            })
-            .when("/start1", {
-                templateUrl: "resources/views/view/start_exam.html"
-            })
-            .when("/start2", {
-                templateUrl: "resources/views/view/content_question.html"
-            })
-            .when("/start3", {
-                templateUrl: "resources/views/view/submitted.html"
-            })
-            .when("/getlist/:id", {
-                templateUrl: "start_exam.html"
-            });
-
-    });
-    app.controller('myCtrl', function($scope) {
-        $scope.name = "John Doe";
-    });
-    app.controller('ThiTracNghiemController', function ($scope, $http) {
-        $http.get('http://localhost/hocmaivn/list11/1/1').success(function (response) {
-            //console.log(response);
-            $scope.cauhois = response;
-        });
-    });
-    app.controller('MonThiController', function ($scope, $http) {
-        $http.get('http://localhost/hocmaivn/list_monhoc').success(function (response) {
-            //console.log(response);
-            $scope.monhocs = response;
-        });
-    });
-    app.controller('getListEachMonThiController', function ($scope, $http, $routeParams) {
-        $scope.id = $routeParams.id;
-
-        $http.get('http://localhost/hocmaivn/getlist/' +  $scope.id  ).success(function (response) {
-            console.log(response);
-            $scope._monhoc = response;
-        });
-    });
-</script>
 <!--Import jQuery before materialize.js-->
 <script type="text/javascript" src="<?php echo asset('resources/views/js/jquery-2.1.1.min.js'); ?>  "></script>
 <script type="text/javascript" src="<?php echo asset('resources/views/js/materialize.js'); ?>"></script>
 <script type="text/javascript" src="<?php echo asset('resources/views/js/init.js'); ?>"></script>
+<script type="text/javascript" src="<?php echo asset('public/app/app.js'); ?>"></script>
 
 </body>
 </html>

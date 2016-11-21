@@ -4,10 +4,14 @@
         $('.button-collapse').sideNav({
             edge: 'right', // Choose the horizontal origin
             menuWidth: 150, // Default is 240
+            closeOnClick: true
         });
         $('.button-collapse-1').sideNav({
             edge: 'left', // Choose the horizontal origin
             menuWidth: 250, // Default is 240
+            closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
+            draggable: true // Choose whether you can drag to open on touch screens
+            
         });
         $('input.autocomplete').autocomplete({
             data: {
