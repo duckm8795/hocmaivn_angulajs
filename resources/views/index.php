@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html ng-app="myApp">
-<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+
+<script type="text/javascript" src="<?php echo asset('public/app/lib/angular.min.js'); ?>"></script>
+<script type="text/javascript" src="<?php echo asset('public/app/lib/angular-route.js'); ?>"></script>
+<script type="text/javascript" src="<?php echo asset('public/app/app.js'); ?>"></script>
+
 <head>
     <!--Import Google Icon Font-->
-    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="<?php echo asset('public/css/icon.css'); ?>">
     <!--Import materialize.css-->
-    <link type="text/css" rel="stylesheet" href="css/materialize.css" media="screen,projection"/>
-
+    <link type="text/css" rel="stylesheet" href="<?php echo asset('public/css/materialize.min.css'); ?>" media="screen,projection"/>
+    <title> Hocmai.vn</title>
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -18,10 +20,11 @@
 <body class="red lighten-5">
 <header>
     <!-- Nav bar -->
+<!--    <div ng-include src="'resources/views/view/nav_bar.html'"></div>-->
     <nav>
         <div class="nav-wrapper indigo ">
-            <a href="#" data-activates="slide-out" class="button-collapse-1 left"><i class="material-icons">view_day</i></a>
-            <a href="#" class="brand-logo center"><img class="responsive-img" src="images/ic_launcher.png"></a>
+            <a href="#" data-activates="slide-out" class="button-collapse-1 left "><i class="material-icons">view_day</i></a>
+            <a href="#" class="brand-logo center"><img class="responsive-img" src="public/images/ic_launcher.png"></a>
             <a href="#" data-activates="mobile-demo" class=" button-collapse right"><i
                     class="material-icons">clear_all</i></a>
             <ul class="right hide-on-med-and-down">
@@ -82,7 +85,7 @@
 
 
 
-    
+
     <!--    -->
     <!--        <div class="container ">-->
     <!--        <div class="row">-->
@@ -154,10 +157,9 @@
 
 
 <!--Import jQuery before materialize.js-->
-<script type="text/javascript" src="<?php echo asset('resources/views/js/jquery-2.1.1.min.js'); ?>  "></script>
-<script type="text/javascript" src="<?php echo asset('resources/views/js/materialize.js'); ?>"></script>
-<script type="text/javascript" src="<?php echo asset('resources/views/js/init.js'); ?>"></script>
-<script type="text/javascript" src="<?php echo asset('public/app/app.js'); ?>"></script>
+<script type="text/javascript" src="<?php echo asset('public/js/jquery-2.1.1.min.js'); ?>  "></script>
+<script type="text/javascript" src="<?php echo asset('public/js/materialize.js'); ?>"></script>
+<script type="text/javascript" src="<?php echo asset('public/js/init.js'); ?>"></script>
 
 </body>
 </html>

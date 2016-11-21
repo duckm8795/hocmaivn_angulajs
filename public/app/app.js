@@ -25,9 +25,6 @@ app.config(function ($routeProvider) {
         });
 
 });
-app.controller('myCtrl', function($scope) {
-    $scope.name = "John Doe";
-});
 app.controller('ThiTracNghiemController', function ($scope, $http) {
     $http.get('http://localhost/hocmaivn/list11/1/1').success(function (response) {
         //console.log(response);
