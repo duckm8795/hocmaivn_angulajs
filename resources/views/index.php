@@ -116,43 +116,7 @@
 
 
 <footer class="page-footer indigo">
-    <div class="container">
-        <div class="row">
-            <div class="col l6 s12">
-                <h5 class="white-text">Giới thiệu</h5>
-                <p class="grey-text text-lighten-4">HỆ THỐNG GIÁO DỤC HÀNG ĐẦU VIỆT NAM.
-                    Với hơn 2,5 triệu thành viên tham gia học tập
-
-                    Gần 100 thày cô giáo giỏi, uy tín trên toàn quốc
-                    Hơn 400 thủ khoa, á khoa các cấp
-                    Cùng hàng trăm nghìn học sinh tiến bộ vượt trội
-                    là thành viên của HOCMAI..</p>
-
-
-            </div>
-            <div class="col l3 s12">
-                <h5 class="white-text">Mobile App</h5>
-                <ul>
-                    <li><a class="white-text" href="#!">Android</a></li>
-                    <li><a class="white-text" href="#!">iOS </a></li>
-
-                </ul>
-            </div>
-            <div class="col l3 s12">
-                <h5 class="white-text">Liên lạc</h5>
-                <ul>
-                    <li><a class="white-text" href="#!">Facebook </a></li>
-                    <li><a class="white-text" href="#!">Google </a></li>
-
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="footer-copyright">
-        <div class="container">
-            Made by <a class="orange-text text-lighten-3" href="">Kiều Minh Đức</a>
-        </div>
-    </div>
+    <div ng-include src="'resources/views/view/footer.html'"></div>
 </footer>
 
 
