@@ -25,3 +25,10 @@ Route::get('list11/{monthi_id}/{dethi_id}',function($monthi_id,$dethi_id){
         ['monthi_id', '=', $dethi_id],
     ])->get();
 });
+Route::get('list_monhoc',function(){
+    return App\MonThi::orderBy('id','ASC')->get();
+});
+Route::get('getlist/{monthi_id}',function($monthi_id){
+    return App\MonThi::join('dethi','monthi.id', '=', 'dethi.monthi_id')->where('monthi.id','=',$monthi_id)->get();
+
+});

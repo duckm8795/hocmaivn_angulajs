@@ -15,7 +15,7 @@
 
 </head>
 
-<body class="red lighten-5" ng-controller="ThiTracNghiemController" >
+<body class="red lighten-5">
 <header>
     <!-- Nav bar -->
     <nav>
@@ -37,7 +37,7 @@
             </ul>
         </div>
     </nav>
-    <ul id="slide-out" class="side-nav">
+    <ul id="slide-out" class="side-nav" ng-controller="MonThiController as monthiCtrl">
         <li>
             <div class="userView">
                 <div class="background">
@@ -48,34 +48,24 @@
                 <a href="#!email"><span class="white-text email">jdandturk@gmail.com</span></a>
             </div>
         </li>
-        <li><a href="#!">Toán</a></li>
+        <li>
+            <a href="#getlist/{{ mh.id}}" ng-repeat="mh in monhocs" >  {{ mh.name_monthi}}</a>
+        </li>
         <li>
             <div class="divider"></div>
         </li>
-        <li><a href="#!">Văn</a></li>
-        <li>
-            <div class="divider"></div>
-        </li>
-        <li><a href="#!">Anh</a></li>
-        <li>
-            <div class="divider"></div>
-        </li>
-        <li><a href="#!">Lý</a></li>
-        <li>
-            <div class="divider"></div>
-        </li>
-        <li><a href="#!">Hóa</a></li>
 
     </ul>
+
 </header>
 
 
 <main>
     <!-- Search -->
-    <div class="container">
+    <div class="container" ng-controller="myCtrl">
         <div class="row">
             <div class="input-field col s4 ">
-                <select >
+                <select id="SpaceAccommodation">
                     <option value="" disabled selected>Tìm kiếm</option>
                     <option value="1">Toán</option>
                     <option value="2">Văn</option>
@@ -84,77 +74,46 @@
                     <option value="5">Hóa</option>
                 </select>
             </div>
+            
+            <div class="test">
+
+            </div>
             <div class="input-field col s2">
                 <a href="#start1" class="waves-effect waves-light btn indigo">Tìm kiếm</a>
             </div>
-            <div class="input-field col s2">
-                <a href="#start2" class="waves-effect waves-light btn indigo">Tìm kiếm</a>
-            </div>
-            <div class="input-field col s2">
-                <a href="#start3" class="waves-effect waves-light btn indigo">Tìm kiếm</a>
-            </div>
-            <div class="input-field col s2">
-                <a href="#/" class="waves-effect waves-light btn indigo">Tìm kiếm</a>
-            </div>
+
         </div>
     </div>
 
-    <ul class="collapsible" data-collapsible="accordion">
-        <li>
-            <div class="collapsible-header" ng-repeat="ch in cauhois"><i class="material-icons">filter_drama</i>{{ ch.name_monthi }}</div>
-            <div class="collapsible-body" ng-repeat="chn in ch.name_dethi">
-                <p>{{ chn.text}}</p>
-            </div>
-        </li>
 
-    </ul>
 
-    <div class="container ">
-        <div class="row">
-            <div class="col s12 card-panel">
-                <div class="row">
-                    <div class="col s9">
-                        <form action="#" class="indigo-text" ng-repeat="ch in cauhois">
-                            <p >
-                                {{ ch.name_monthi }}
-                            </p>
-                            <p ng-repeat="chn in ch.name_dethi">
-                                <input name="group1" type="radio" id="test1" class="with-gap"/>
-                                <label for="test1"">{{ chn.id}}</label>
-                            </p>
-
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
 
 
     </div>
-<!--    -->
-<!--        <div class="container ">-->
-<!--        <div class="row">-->
-<!--            <div class="col s12 card-panel">-->
-<!--                <div class="row">-->
-<!--                    <div class="col s9">-->
-<!--                        <form action="#" class="indigo-text" ng-repeat="ch in cauhois">-->
-<!--                            <p >-->
-<!--                                {{ ch.id }}. {{ ch.questions }}-->
-<!--                            </p>-->
-<!--                            <p ng-repeat =" chs in ch.choices">-->
-<!--                                <input name="group1" type="radio" id="test1" class="with-gap"/>-->
-<!--                                <label for="test1"">{{ chs.text }}</label>-->
-<!--                            </p>-->
-<!--                            -->
-<!--                        </form>                    -->
-<!--                    </div>                -->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    -->
-<!---->
-<!--    </div>-->
-    <div class="ng-view" >
+    <!--    -->
+    <!--        <div class="container ">-->
+    <!--        <div class="row">-->
+    <!--            <div class="col s12 card-panel">-->
+    <!--                <div class="row">-->
+    <!--                    <div class="col s9">-->
+    <!--                        <form action="#" class="indigo-text" ng-repeat="ch in cauhois">-->
+    <!--                            <p >-->
+    <!--                                {{ ch.id }}. {{ ch.questions }}-->
+    <!--                            </p>-->
+    <!--                            <p ng-repeat =" chs in ch.choices">-->
+    <!--                                <input name="group1" type="radio" id="test1" class="with-gap"/>-->
+    <!--                                <label for="test1"">{{ chs.text }}</label>-->
+    <!--                            </p>-->
+    <!--                            -->
+    <!--                        </form>                    -->
+    <!--                    </div>                -->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--    -->
+    <!---->
+    <!--    </div>-->
+    <div class="ng-view">
 
     </div>
 </main>
@@ -201,34 +160,61 @@
 </footer>
 
 <script>
-    var app = angular.module("myApp", ["ngRoute"]);
-    app.config(function($routeProvider) {
-        $routeProvider
-                .when("/", {
-                    templateUrl : "main_content.html"
-                })
-                .when("/start1", {
-                    templateUrl : "start_exam.html"
-                })
-                .when("/start2", {
-                    templateUrl : "content_question.html"
-                })
-                .when("/start3", {
-                    templateUrl : "submitted.html"
-                });
+    $('#SpaceAccommodation').change(function () {
+        var selectedText = $(this).find("option:selected").text();
+
+        $(".test").text(selectedText);
     });
 
-    app.controller('ThiTracNghiemController', function ($scope,$http){
-        $http.get('http://localhost/hocmaivn/list11/1/1').success(function(response){
-            console.log(response);
+    var app = angular.module("myApp", ["ngRoute"]);
+
+    app.config(function ($routeProvider) {
+        $routeProvider
+            .when("/", {
+                templateUrl: "resources/views/view/main_content.html"
+            })
+            .when("/start1", {
+                templateUrl: "resources/views/view/start_exam.html"
+            })
+            .when("/start2", {
+                templateUrl: "resources/views/view/content_question.html"
+            })
+            .when("/start3", {
+                templateUrl: "resources/views/view/submitted.html"
+            })
+            .when("/getlist/:id", {
+                templateUrl: "start_exam.html"
+            });
+
+    });
+    app.controller('myCtrl', function($scope) {
+        $scope.name = "John Doe";
+    });
+    app.controller('ThiTracNghiemController', function ($scope, $http) {
+        $http.get('http://localhost/hocmaivn/list11/1/1').success(function (response) {
+            //console.log(response);
             $scope.cauhois = response;
+        });
+    });
+    app.controller('MonThiController', function ($scope, $http) {
+        $http.get('http://localhost/hocmaivn/list_monhoc').success(function (response) {
+            //console.log(response);
+            $scope.monhocs = response;
+        });
+    });
+    app.controller('getListEachMonThiController', function ($scope, $http, $routeParams) {
+        $scope.id = $routeParams.id;
+
+        $http.get('http://localhost/hocmaivn/getlist/' +  $scope.id  ).success(function (response) {
+            console.log(response);
+            $scope._monhoc = response;
         });
     });
 </script>
 <!--Import jQuery before materialize.js-->
-<script type="text/javascript" src="<?php echo asset('js/jquery-2.1.1.min.js'); ?>  "></script>
-<script type="text/javascript" src="<?php echo asset('js/materialize.js'); ?>"></script>
-<script type="text/javascript" src="<?php echo asset('js/init.js'); ?>"></script>
+<script type="text/javascript" src="<?php echo asset('resources/views/js/jquery-2.1.1.min.js'); ?>  "></script>
+<script type="text/javascript" src="<?php echo asset('resources/views/js/materialize.js'); ?>"></script>
+<script type="text/javascript" src="<?php echo asset('resources/views/js/init.js'); ?>"></script>
 
 </body>
 </html>
