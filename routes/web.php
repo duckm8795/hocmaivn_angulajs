@@ -19,10 +19,10 @@ Route::get('list', ['uses' => 'ThiTracNghiemController@index']);
 Route::get('list2',function(){
      return App\MonThi::join('dethi','monthi.id', '=', 'dethi.monthi_id')->get();
 });
-Route::get('list11/{monthi_id}/{dethi_id}',function($monthi_id,$dethi_id){
+Route::get('listcauhoi/{monthi_id}/{dethi_id}',function($monthi_id,$dethi_id){
     return App\CauHoi::where([
-        ['dethi_id', '=', $monthi_id],
-        ['monthi_id', '=', $dethi_id],
+        ['dethi_id', '=', $dethi_id],
+        ['monthi_id', '=',$monthi_id ],
     ])->get();
 });
 Route::get('list_monhoc',function(){

@@ -22,6 +22,9 @@ app.config(function ($routeProvider) {
         })
         .when("/start/:id", {
             templateUrl: "resources/views/view/submitted.html"
+        })
+        .when("/listcauhoi/:monthi_id/:dethi_id", {
+            templateUrl: "resources/views/view/content_question.html"
         });
 
 });
@@ -33,7 +36,7 @@ app.controller('ThiTracNghiemController', function ($scope, $http) {
 });
 app.controller('MonThiController', function ($scope, $http) {
     $http.get('http://localhost/hocmaivn/list_monhoc').success(function (response) {
-        console.log(response);
+        //console.log(response);
         $scope.monhocs = response;
     });
 });
@@ -41,6 +44,15 @@ app.controller('GetNoCauHoiController', function ($scope, $http) {
     $http.get('http://localhost/hocmaivn/getnoquestion').success(function (response) {
         //console.log(response);
         $scope.no_cauhoi = response;
+    });
+});
+app.controller('GetListCauHoiController', function ($scope, $http, $routeParams) {
+    // $scope.monthi_id = $routeParams.monthi_id;
+    $scope.dethi_id = $routeParams.dethi_id;
+    $scope.monthi_id = $routeParams.monthi_id;
+    $http.get('http://localhost/hocmaivn/listcauhoi/' + $scope.monthi_id+'/'+ $scope.dethi_id  ).success(function (response) {
+        console.log(response);
+        $scope._listcauhoi = response;
     });
 });
 app.controller('getListEachMonThiController', function ($scope, $http, $routeParams) {
@@ -53,9 +65,8 @@ app.controller('getListEachMonThiController', function ($scope, $http, $routePar
 });
 app.controller('getListMonThiController', function ($scope, $http) {
 
-
     $http.get('http://localhost/hocmaivn/getlist' ).success(function (response) {
-        console.log(response);
+        //console.log(response);
         $scope.list_monhoc = response;
     });
 });
@@ -63,7 +74,7 @@ app.controller('getStartedController', function ($scope, $http, $routeParams) {
     $scope.id = $routeParams.id;
 
     $http.get('http://localhost/hocmaivn/start/' +  $scope.id  ).success(function (response) {
-        console.log(response);
+        //console.log(response);
         $scope._monhoc = response;
     });
 });

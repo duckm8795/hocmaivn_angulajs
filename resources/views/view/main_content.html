@@ -1,5 +1,11 @@
 <!DOCTYPE html>
 <html>
+<head>
+    <link rel="stylesheet" type="text/css" href="public/css/icon.css">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="public/css/materialize.min.css" media="screen,projection"/>
+
+</head>
 <body class="red lighten-5">
 <div class="container " ng-controller="getListMonThiController" >
 
@@ -15,7 +21,7 @@
                     <p ng-controller="GetNoCauHoiController ">First Line  : {{ no_cauhoi.length }}<br>
 
                     </p>
-                    <a href="start/{{mh_child.id}}" class="secondary-content"><i class="material-icons">trending_flat</i></a>
+                    <a href="listcauhoi/{{lmh.monthi_id}}/{{mh_child.id}}" class="secondary-content"><i class="material-icons">trending_flat</i></a>
                 </li>
 
             </ul>
@@ -28,8 +34,8 @@
 
 
 <!--Import jQuery before materialize.js-->
-<script type="text/javascript" src="<?php echo asset('resources/views/js/jquery-2.1.1.min.js'); ?>  "></script>
-<script type="text/javascript" src="<?php echo asset('resources/views/js/materialize.js'); ?>"></script>
-
+<script type="text/javascript" src="<?php echo asset('public/js/jquery-2.1.1.min.js'); ?>  "></script>
+<script type="text/javascript" src="<?php echo asset('public/js/materialize.js'); ?>"></script>
+<script type="text/javascript" src="<?php echo asset('public/js/init.js'); ?>"></script>
 </body>
 </html>
