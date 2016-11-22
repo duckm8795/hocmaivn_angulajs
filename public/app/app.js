@@ -138,10 +138,12 @@ app.controller('QuizController', ['$scope', '$http', '$sce','$routeParams', func
     }
 
     $scope.createShareLinks = function(percentage) {
-        var url = 'https://samrubin.co';
-        var emailLink = '<a class="btn email" href="mailto:?subject=Try to beat my quiz score!&amp;body=I scored ' + percentage + '%25 on this quiz about Saturn. Try to beat my score at ' + url + '">Email a Friend</a>';
-        var twitterLink = '<a class="btn twitter" target="_blank" href="http://twitter.com/share?text=I scored a ' + percentage + '%25 on this quiz about Saturn. Try to beat my score at&amp;hashtags=SaturnQuiz&amp;url=' + url + '">Tweet Your Score</a>';
-        var newMarkup = emailLink + twitterLink;
+        var url = 'https://kieuminhduc.com.vn';
+        var homeLink = '<a class="btn home"  href="#/"></a>';
+        var faceLink = '<a class="btn facebook" target="_blank" href="http://facebook.com/share?text=I scored a ' + percentage + '%25 on this quiz about Saturn. Try to beat my score at&amp;hashtags=SaturnQuiz&amp;url=' + url + '"></a>';
+        var twitterLink = '<a class="btn twitter" target="_blank" href="http://twitter.com/share?text=I scored a ' + percentage + '%25 on this quiz about Saturn. Try to beat my score at&amp;hashtags=SaturnQuiz&amp;url=' + url + '"></a>';
+
+        var newMarkup = homeLink+ faceLink + twitterLink;
 
         return $sce.trustAsHtml(newMarkup);
     }

@@ -67,7 +67,7 @@
 
 <main>
     <!-- Search -->
-    <div class="container" ng-controller="SearchController">
+    <div class="container center-align" ng-controller="SearchController">
         <div class="row">
             <div class="input-field col s4" >
                 <select  class="browser-default" ng-model="selectedName" >
