@@ -67,24 +67,21 @@
 
 <main>
     <!-- Search -->
-    <div class="container" ng-controller="MonThiController">
+    <div class="container" ng-controller="SearchController">
         <div class="row">
             <div class="input-field col s4" >
-                <select  class="browser-default" ng-model="myVar" >
-                    <option ng-repeat="mhs in monhocs" value="{{ mhs.id}}">{{ mhs.name_monthi}}</option>
+                <select  class="browser-default" ng-model="selectedName" >
+                    <option ng-model="value_search" value="" disabled selected>Tìm kiếm môn học</option>
+                    <option ng-repeat =" slmh in search_list_monhoc" value="{{slmh.id}}">{{slmh.name_monthi}}</option>
                 </select>
-            </div>
 
+            </div>
             <div class="input-field col s2">
-                <a href="#start1" class="waves-effect waves-light btn indigo">Tìm kiếm</a>
-            </div>
-            <div ng-switch="myVar">
-                <div ng-switch-when="{{ mhs.id}}">
-                    <a href="#getlist/{{ mh.id}}" ng-repeat="mh in monhocs"></a>
-                </div>
-
+                <a href="#getlist/{{selectedName}}" class="waves-effect waves-light btn indigo"> Tìm kiếm</a>
             </div>
         </div>
+
+
     </div>
 
 

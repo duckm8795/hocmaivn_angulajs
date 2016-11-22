@@ -14,9 +14,9 @@
 <body class="red lighten-5" >
 <div class="container " ng-controller ="GetListCauHoiController">
     <div class="row">
-        <div class="col s12 card-panel" ng-repeat="lch in _listcauhoi">
-            <div class="row">
-                <div class="col s9">
+        <div class="col s12 card-panel" >
+            <div class="row" >
+                <div class="col s9" ng-repeat="lch in _listcauhoi">
                     <form action="#" class="indigo-text" >
                         <p>
                             {{lch.id}}.{{lch.questions}}

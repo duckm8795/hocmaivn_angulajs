@@ -11,7 +11,6 @@
 <div class="container " ng-controller="getListEachMonThiController" >
 
 
-
     <div class="row">
         <div class="col s12" ng-repeat="mh in _monhoc">
             <div class="card-panel indigo white-text center ">{{ mh.name_monthi }}</div>
@@ -22,14 +21,11 @@
                     <p ng-controller="GetNoCauHoiController ">First Line  : {{ no_cauhoi.length }}<br>
 
                     </p>
-                    <a href="listcauhoi/{{mh.monthi_id}}/{{mh_child.id}}" class="secondary-content"><i class="material-icons">trending_flat</i></a>
+                    <a href="#listcauhoi/{{mh.monthi_id}}/{{mh_child.id}}" class="secondary-content"><i class="material-icons">trending_flat</i></a>
                 </li>
 
             </ul>
         </div>
-
-
-
     </div>
 </div>
 
