@@ -54,7 +54,9 @@
             </div>
         </li>
         <li>
+            <a href="#list_monhoc" > Tất cả môn học</a>
             <a href="#getlist/{{ mh.id}}" ng-repeat="mh in monhocs"> {{ mh.name_monthi}}</a>
+
         </li>
         <li>
             <div class="divider"></div>
@@ -74,7 +76,6 @@
                     <option ng-model="value_search" value="" disabled selected>Tìm kiếm môn học</option>
                     <option ng-repeat =" slmh in search_list_monhoc" value="{{slmh.id}}">{{slmh.name_monthi}}</option>
                 </select>
-
             </div>
             <div class="input-field col s2">
                 <a href="#getlist/{{selectedName}}" class="waves-effect waves-light btn indigo"> Tìm kiếm</a>

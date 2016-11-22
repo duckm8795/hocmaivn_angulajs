@@ -15,7 +15,7 @@ class CreateCauhoiTable extends Migration
     {
         Schema::create('cauhoi', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('questions')->unique();         
+            $table->string('questions');         
             $table->json('choices');
             $table->integer('monthi_id');
             $table->integer('dethi_id')->unsigned();

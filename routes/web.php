@@ -37,6 +37,6 @@ Route::get('getlist',function(){
 
 });
 Route::get('getnoquestion',function(){
-    return App\MonThi::join('cauhoi','monthi.id', '=', 'cauhoi.dethi_id')->get();
+    return App\CauHoi::join('cauhoi','monthi.id', '=', 'cauhoi.dethi_id')->get();
 
 });

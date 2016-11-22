@@ -25,6 +25,9 @@ app.config(function ($routeProvider) {
         })
         .when("/listcauhoi/:monthi_id/:dethi_id", {
             templateUrl: "resources/views/view/content_question2.html"
+        })
+        .otherwise({
+            redirectTo: '/'
         });
 
 });
@@ -35,7 +38,7 @@ app.controller('ThiTracNghiemController', function ($scope, $http) {
     });
 });
 app.controller('SearchController', function ($scope,$http) {
-    $http.get('http://localhost/hocmaivn/getlist' ).success(function (response) {
+    $http.get('http://localhost/hocmaivn/list_monhoc' ).success(function (response) {
         //console.log(response);
         $scope.search_list_monhoc = response;
     });
@@ -54,6 +57,7 @@ app.controller('GetNoCauHoiController', function ($scope, $http) {
         $scope.no_cauhoi = response;
     });
 });
+
 app.controller('GetListCauHoiController', function ($scope, $http, $routeParams) {
     // $scope.monthi_id = $routeParams.monthi_id;
     $scope.dethi_id = $routeParams.dethi_id;
@@ -103,7 +107,7 @@ app.controller('QuizController', ['$scope', '$http', '$sce','$routeParams', func
     //     $scope.myQuestions = quizData.data;
     //     $scope.totalQuestions = $scope.myQuestions.length;
     // });
-    
+
     $scope.selectAnswer = function(qIndex, aIndex){
 
         var questionState = $scope.myQuestions[qIndex].questionState;

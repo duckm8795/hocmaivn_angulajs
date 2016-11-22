@@ -36,7 +36,7 @@
 				{{ ($index === activeQuestion ? 'active' : 'inactive') }}
 				" ng-repeat="myQuestion in myQuestions">
 
-        <p class="txt">{{myQuestion.id}}.{{ myQuestion.questions }}</p>
+        <p class="txt">{{ myQuestion.questions }}</p>
         <p class="ans"
            ng-repeat="Answer in myQuestions[$index].choices"
            ng-class="{
